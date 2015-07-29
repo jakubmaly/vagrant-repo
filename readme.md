@@ -30,5 +30,5 @@ This Vagrant environment was tested with Virtualbox, but is expected to work wit
 ##How to use
 
 ```bash
-curl 
+
 ```
