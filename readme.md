@@ -28,7 +28,10 @@ In order to run this environment, the host machine has to have Vagrant installed
 This Vagrant environment was tested with Virtualbox, but is expected to work with other providers, since it uses no provider-specific settings (however this is may not always be the case). Please note that by default, Virtualbox assigns Vagrant machines 512 MB of RAM. This can be changed, but is a provider specific setting. See the documentation: http://docs.vagrantup.com/v2/
 
 ##How to use
+To run the virtual machine:
 
 ```bash
-
+git clone https://github.com/jakubmaly/vagrant-repo.git
+cd vagrant-repo
+vagrant up
 ```
