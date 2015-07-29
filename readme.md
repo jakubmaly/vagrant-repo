@@ -53,6 +53,8 @@ Password: user
 Database: database
 ~~~
 
+A command prompt example: `mysql --host=127.0.0.1 --port=3000 --user=user --password=user database`
+
 ##Tips
 
 This Vagrant environment is very basic and uses mostly default settings. However, Vagrant comes with very good documentation and it is highly recommended to read them and customize the Vagrantfile to your needs: http://docs.vagrantup.com/v2/
