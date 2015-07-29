@@ -1,0 +1,5 @@
+---
+ database_user: 'user'
+ database_password: 'user'
+ database_host: '%'
+ database_grant: 'ALL'
