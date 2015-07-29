@@ -31,7 +31,26 @@ This Vagrant environment was tested with Virtualbox, but is expected to work wit
 To run the virtual machine:
 
 ```bash
-git clone https://github.com/jakubmaly/vagrant-repo.git
-cd vagrant-repo
-vagrant up
+$ git clone https://github.com/jakubmaly/vagrant-repo.git
+$ cd vagrant-repo
+$ vagrant up
 ```
+
+To connect to the virtual machine:
+
+```bash
+vagrant ssh
+```
+
+
+To connect to the database server using preconfigured settings:
+
+~~~
+Host: 127.0.0.1
+Port: 3000
+Username: user
+Password: user
+Database: database
+~~~
+
+##Tips
