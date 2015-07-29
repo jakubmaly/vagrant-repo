@@ -10,7 +10,7 @@
 
 ##Description
 
-This Vagrant "repository" creates a virtual machine with Ubuntu 14.04 (32bit). Additionally, Puppet is installed and used to provision the machine with MariaDB and configure a database and a user on it. The module to manage the database server is Puppet's officially supported puppetlabs-mysql module.
+This Vagrant "repository" creates a virtual machine with Ubuntu 14.04 (32bit). Additionally, Puppet is installed and used to provision the machine with MariaDB and configure a database and a user on it. The module to manage the database server is Puppet's officially supported `puppetlabs-mysql` module.
 
 ##Overview
 
@@ -18,9 +18,9 @@ This Vagrant "repository" creates a virtual machine with Ubuntu 14.04 (32bit). A
 2. Sets its hostname to "vagrant-ubuntu"
 3. Forwards the default port on which MySQL server is running (3306) to port 3000 on the host machine
 4. The shell script (../setup.sh) installs Puppet and Puppet's MySQL and stdlib modules
-5. Puppet installs packages mariadb-server and mariadb-client
+5. Puppet installs packages `mariadb-server` and `mariadb-client`
 6. Puppet reads values stored in Hiera and uses them to set up a database and a user
-7. Puppet uses the stdlib module's type file_line to edit my.cnf and /etc/hosts to allow connections to the MariaDB server from the host machine (anywhere)
+7. Puppet uses the `stdlib` module's type file_line to edit `my.cnf` and `/etc/hosts` to allow connections to the MariaDB server from the host machine (anywhere)
 
 ##Requirements
 
@@ -54,3 +54,11 @@ Database: database
 ~~~
 
 ##Tips
+
+This Vagrant environment is very basic and uses mostly default settings. However, Vagrant comes with very good documentation and it is highly recommended to read them and customize the Vagrantfile to your needs: http://docs.vagrantup.com/v2/
+
+The same goes for Puppet. The database server is configured using puppetlabs-mysql module, which is officially supported and very well documented: https://forge.puppetlabs.com/puppetlabs/mysql
+
+For testing purposes, this virtual machine is 32bit variant of Ubuntu 14.04. Why not 64bit? Well, if you try to run this virtual machine inside ANOTHER virtual machine, 64bit will not work (unless you use native/bare-metal virtualization solution such as Xen). If you are not planning on doing that, feel free to change `ubuntu/trusty32` to `ubuntu/trusty64` in the Vagrantfile.
+
+In order to allow connections to the database server from the host machine, the user 
