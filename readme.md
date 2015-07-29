@@ -39,7 +39,7 @@ $ vagrant up
 To connect to the virtual machine:
 
 ```bash
-vagrant ssh
+$ vagrant ssh
 ```
 
 
