@@ -63,4 +63,9 @@ The same goes for Puppet. The database server is configured using puppetlabs-mys
 
 For testing purposes, this virtual machine is 32bit variant of Ubuntu 14.04. Why not 64bit? Well, if you try to run this virtual machine inside ANOTHER virtual machine, 64bit will not work (unless you use native/bare-metal virtualization solution such as Xen). If you are not planning on doing that, feel free to change `ubuntu/trusty32` to `ubuntu/trusty64` in the Vagrantfile.
 
-In order to allow connections to the database server from the host machine, the user 
+In order to allow connections to the database server from the host machine, the user's host has to be set to the guest machine's gateway. In Virtualbox this often is `10.0.2.2`, but to be sure, I set it to wildcard `%` (anywhere). However, the gateway can be obtained using this command: 
+
+```bash
+$ echo $(/sbin/ip route | awk '/default/ { print $3 }')
+```
+And then can be used by Puppet as a custom fact in Facter: https://docs.puppetlabs.com/facter/3.0/custom_facts.html
