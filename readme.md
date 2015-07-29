@@ -68,4 +68,4 @@ In order to allow connections to the database server from the host machine, the 
 ```bash
 $ echo $(/sbin/ip route | awk '/default/ { print $3 }')
 ```
-And then can be used by Puppet as a custom fact in Facter: https://docs.puppetlabs.com/facter/3.0/custom_facts.html
+Which can be used by Puppet as a custom fact in Facter: https://docs.puppetlabs.com/facter/3.0/custom_facts.html
